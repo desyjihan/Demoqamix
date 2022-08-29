@@ -7,14 +7,23 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.juaracoding.demoqamix.drivers.DriverSingleton;
+
 public class SearchPage {
 
-WebDriver driver;
+private WebDriver driver;
 	
-	public SearchPage(WebDriver driver) {
-		this.driver = driver;
+	public SearchPage() {
+		this.driver = DriverSingleton.getDriver();
 		PageFactory.initElements(driver, this);
 	}
+	
+//WebDriver driver;
+//	
+//	public SearchPage(WebDriver driver2) {
+//		this.driver = driver;
+//		PageFactory.initElements(driver, this);
+//	}
 	
 	@FindBy(xpath = "//a[@class='woocommerce-store-notice__dismiss-link']")
 	private WebElement btnAlert;

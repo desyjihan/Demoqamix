@@ -12,8 +12,6 @@ import com.juaracoding.demoqamix.pages.RegisPage;
 import com.juaracoding.demoqamix.pages.SearchPage;
 import com.juaracoding.demoqamix.utils.Constants;
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -22,31 +20,13 @@ import io.cucumber.java.en.When;
 public class TestDemo {
 
 	public static WebDriver driver;
-	private SearchPage searchPage;
-	private RegisPage regisPage;
-	private LoginPage loginPage;
-	private CheckOutPage checkOutPage;
-	private LogoutPage logoutPage;
+	private SearchPage searchPage = new SearchPage();
+	private RegisPage regisPage = new RegisPage();
+	private LoginPage loginPage = new LoginPage();
+	private CheckOutPage checkOutPage = new CheckOutPage();
+	private LogoutPage logoutPage = new LogoutPage();
+	
 
-	@Before
-	public void setup() {
-		DriverSingleton.getInstance(Constants.CHROME);
-		regisPage = new RegisPage();
-		loginPage = new LoginPage();
-		searchPage = new SearchPage(driver);
-		checkOutPage = new CheckOutPage();
-		logoutPage = new LogoutPage();
-		
-		driver = DriverSingleton.getDriver();
-		driver.get(Constants.URL);
-	}
-
-	@After
-	public void closeBrowser() {
-		delay(3);
-//		driver.quit();
-//		DriverSingleton.closeObjectInstance();
-	}
 	
 	//tag1
 	@Given("User go to Web DemoQA and click myAcc")
