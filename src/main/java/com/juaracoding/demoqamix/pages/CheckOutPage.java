@@ -44,6 +44,9 @@ public class CheckOutPage {
 	@FindBy(xpath = "//input[@id='billing_phone']")
 	private WebElement inputPhone;
 	
+	@FindBy(xpath = "//input[@id='billing_email']")
+	private WebElement inputEmail;
+	
 	@FindBy(xpath = "//input[@id='terms']")
 	private WebElement Accept;
 	
@@ -68,8 +71,8 @@ public class CheckOutPage {
 	
 	public void Province(String Cari) {
 		btnProvince.click();
-		inputProvince.sendKeys(Cari);
-		inputProvince.sendKeys(Keys.ENTER);
+//		inputProvince.sendKeys(Cari);
+		this.inputProvince.sendKeys(Cari,Keys.ENTER);
 	}
 	
 	public void postCode(String postCode) {
@@ -80,6 +83,11 @@ public class CheckOutPage {
 	public void Phone(String phone) {
 		this.inputPhone.clear();
 		this.inputPhone.sendKeys(phone);
+	}
+	
+	public void Email(String email) {
+		this.inputEmail.clear();
+		this.inputEmail.sendKeys(email);
 	}
 	
 	public void accept() {

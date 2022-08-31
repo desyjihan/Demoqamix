@@ -8,8 +8,8 @@ Feature: Demoqa
 
 	@tag2  
 	Scenario: User Login
-		Given User enter username password
-		Given Button remember me
+		When User enter username password
+		And Button remember me
 		Then User click button login
 
 	@tag3		
@@ -20,8 +20,8 @@ Feature: Demoqa
 	
 	@tag4
 	Scenario: Select Wishlist2
-	Given Search item2
-	When Click button wishlist2
+	When Search item2
+	And Click button wishlist2
 	And Click logo2
 	Then Click mywishlist
 		
@@ -33,15 +33,15 @@ Feature: Demoqa
 	
 	@tag6
 	Scenario: Select Options Item2
-	And Click logo3 
-	And Click mywishlist2
-	Given Click select options2
-	When Select options2
+	Given Click logo3 
+	When Click mywishlist2
+#	Given Click select options2
+#	When Select options2
 	
 	@tag7
 	Scenario: Show Cart
-	Given Click viewcart 
-	When Click checkout
+	When Click viewcart 
+	And Click proceed to checkout
 	
 	@tag8
 	Scenario: Checkout
@@ -51,6 +51,7 @@ Feature: Demoqa
 	
 	@tag9
 	Scenario: User Logout
-	Given Click myacc
-	Then Click logout
+	Given Click logo4
+	When Click myacc
+	And Click logout
 	

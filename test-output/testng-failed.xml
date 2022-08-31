@@ -6,7 +6,7 @@
       <class name="com.juaracoding.demoqamix.TestDemoRunner">
         <methods>
           <include name="setUpClass"/>
-          <include name="runScenario" invocation-numbers="3 4 7"/>
+          <include name="runScenario" invocation-numbers="3 4 8"/>
           <include name="tearDownClass"/>
         </methods>
       </class> <!-- com.juaracoding.demoqamix.TestDemoRunner -->
